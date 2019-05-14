@@ -36,7 +36,7 @@ namespace AspNetCoreTwoMacorratiAdoNet.Controllers
             if (string.IsNullOrEmpty(aluno.Email))
                 ModelState.AddModelError("Email", "O email é obrigatório");
 
-            if (aluno.Nascimento <= DateTime.Now.AddYears(-18))
+            if (aluno.Nascimento >= DateTime.Now.AddYears(-18))
                 ModelState.AddModelError("Nascimento", "A data de nascimento é inválida");
 
             //if (aluno?.Nome == null || aluno.Sexo == null || aluno?.Email == null || aluno?.Nascimento == null)
