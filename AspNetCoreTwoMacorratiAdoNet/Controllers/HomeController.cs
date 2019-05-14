@@ -27,27 +27,6 @@ namespace AspNetCoreTwoMacorratiAdoNet.Controllers
         [HttpPost]
         public IActionResult Create(Aluno aluno)
         {
-            if (string.IsNullOrEmpty(aluno.Nome))
-                ModelState.AddModelError("Nome", "O nome é obrigatório");
-
-            if (string.IsNullOrEmpty(aluno.Sexo))
-                ModelState.AddModelError("Sexo", "O sexo é obrigatório");
-
-            if (string.IsNullOrEmpty(aluno.Email))
-                ModelState.AddModelError("Email", "O email é obrigatório");
-
-            if (aluno.Nascimento >= DateTime.Now.AddYears(-18))
-                ModelState.AddModelError("Nascimento", "A data de nascimento é inválida");
-
-            //if (aluno?.Nome == null || aluno.Sexo == null || aluno?.Email == null || aluno?.Nascimento == null)
-            //{
-            //    ViewBag.Erro = "Dados inválidos!";
-            //return View();
-
-            //}
-            //else
-            //{
-
             if (!ModelState.IsValid)
             {
                 return View();
